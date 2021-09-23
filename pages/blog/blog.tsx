@@ -3,16 +3,15 @@ import { client } from "../../libs/client";
 
 export default function Home({ blog }: any) {
   return (
-    <div className="">
-      <div className="">
-        {blog.map((blog: any) => (
-          <div className="px-24 py-6 my-12 rounded-md shadow-md" key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>
-              <a>{blog.title}</a>
-            </Link>
+    <div>
+      {blog.map((blog: any) => (
+        <Link href={`/blog/${blog.id}`} key={blog.id} passHref>
+          <div className="px-12 py-6 my-12 bg-white shadow-md cursor-pointer rounded-2xl hover:shadow-xl">
+            <div className="text-2xl font-bold">{blog.title}</div>
+            <div></div>
           </div>
-        ))}
-      </div>
+        </Link>
+      ))}
     </div>
   );
 }

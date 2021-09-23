@@ -3,14 +3,14 @@ import { client } from "../../libs/client";
 
 export default function BlogId({ blog }: any) {
   return (
-    <div className="w-auto">
-      <h1 className="py-6 text-4xl font-bold">{blog.title}</h1>
-      <p className="text-2xl">{blog.publishedAt}</p>
+    <div className="py-12 mx-auto ">
+      <div className="px-12 pb-6 text-4xl font-bold w-2xl">{blog.title}</div>
+      <div className="px-12 text-2xl w-2xl">{blog.publishedAt}</div>
       <div
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
-        className="prose pt-7"
+        className="p-12 mt-12 prose"
       />
     </div>
   );
